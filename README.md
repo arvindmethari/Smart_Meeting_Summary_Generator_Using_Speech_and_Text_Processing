@@ -19,19 +19,6 @@ The system pipeline is outlined below:
 ![Overview of the system](Over%20view%20of%20the%20system.png)
 ![System architecture](System%20Architecture.png)
 
-```mermaid
-flowchart TD
-    Video/Audio/Doc[Input:\nVideo/Audio/Document] -->|ASR| Whisper[Whisper ASR]
-    Whisper --> Pre[Text Preprocessing]
-    Document --> Pre
-    Pre --> Summarizer[BART Summarization]
-    Summarizer --> Summary[Summary Output (Topics/Points)]
-    Pre --> ActionDetector[BERT Action-Item Detection]
-    ActionDetector --> Prioritizer[Priority Classifier]
-    Prioritizer --> Actions[Prioritized Action Items]
-    Pre --> Verifier[Factual Verification]
-    Verifier --> Verified[Verified Bullet Summary]
-```
 
 1. **Input Stage**: The user provides a video file, audio recording, or text document.  
 2. **ASR (Whisper)**: If video/audio, the audio track is extracted and passed to Whisper. This module transcribes speech to text. We use the English-only Whisper models (`*.en`) for improved accuracy.  
