@@ -250,4 +250,3 @@ Example citation format (BibTeX) is above. Thank you for using our Smart Meeting
 ## Acknowledgments
 
 We thank the Hugging Face community for models and tools, and the authors of Whisper, BART, and BERT for open-source models that make this work possible.  
-
